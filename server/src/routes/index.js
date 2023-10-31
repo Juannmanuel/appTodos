@@ -1,12 +1,11 @@
 const { Router } = require(`express`)
+const userRouter = require("./usersRoutes")
+const taksRouter = require("./taksRouter")
 const mainRouter = Router()
 
+mainRouter.use("/users", userRouter)
 
-mainRouter.get("/users", (req, res) => {
-    res.status(200).send(`Ususarios`)
-})
-mainRouter.get("/users/:id", (req, res) => {
-    res.status(200).send(`Ususario expesifico`)
-})
+mainRouter.use("/taks", taksRouter)
+
 
 module.exports = mainRouter
