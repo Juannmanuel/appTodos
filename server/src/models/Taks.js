@@ -14,6 +14,9 @@ module.exports = (sequelize) => {
         description: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        priority: {
+            type: DataTypes.ENUM("Urgent", "Important", "Regular")
         }
     },  { timestamps: false })
 }

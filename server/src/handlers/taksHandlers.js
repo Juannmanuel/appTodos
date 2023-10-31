@@ -1,4 +1,5 @@
 
+const { createTaksDB } = require("../controllers/taksControllers");
 const taks = require(`../data/taks`)
 function generateID() {
     return String(Math.random()).replace('.', '').slice(0, 10);
@@ -7,13 +8,12 @@ function generateID() {
 const allTaks = (req, res) => {
     res.status(200).send(taks)
 }
-const createTaks = (req, res) => {
+const createTaks = async (req, res) => {
     const { title, description, priority } = req.body
     if (!title || !description || !priority) throw Error(`Faltan datos`)
     try {
-        const newTaks = { title, description, priority, id: generateID() }
-        taks.push(newTaks)
-        res.status(200).send({ "Tarea creada correctamente": taks })
+        const response = await createTaksDB(title, description, priority)
+        res.status(200).send({ "Tarea creada correctamente": response })
     } catch (error) {
         console.error({ "message error": error.message })
     }
