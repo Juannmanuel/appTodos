@@ -4,7 +4,10 @@ const morgan = require("morgan")
 const mainRouter = require("./routes")
 //ejecutamos express para el servidor
 const app = express()
+const cors = require('cors');
 
+
+app.use(cors())
 app.use(morgan("dev"))
 app.use(express.json());
 
