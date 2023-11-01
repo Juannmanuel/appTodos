@@ -27,7 +27,7 @@ const getAllTaks = async (req, res) => {
     }
 }
 const deleteTaks = async (req, res) => {
-    const { id } = req.body
+    const { id } = req.params
     if (!id) throw Error(`Faltan datos obligatorios`)
     try {
         await Taks.destroy({ where: { id: id } })

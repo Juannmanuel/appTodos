@@ -6,7 +6,7 @@ const taksRouter = Router()
 taksRouter.get("/", getAllTaks)
 taksRouter.post("/create", createTaks)
 taksRouter.put(`/update/:id`, updateTaks)
-taksRouter.delete(`/delete`, deleteTaks)
+taksRouter.delete(`/delete/:id`, deleteTaks)
 
 
 module.exports = taksRouter
