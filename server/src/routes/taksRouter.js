@@ -1,11 +1,12 @@
 const { Router } = require(`express`)
-const { allTaks, createTaks, updateTaks } = require("../handlers/taksHandlers")
+const { getAllTaks, createTaks, deleteTaks, updateTaks } = require("../handlers/taksHandlers")
 
 const taksRouter = Router()
 
-taksRouter.get("/")
-taksRouter.post("/post", createTaks)
-taksRouter.put(`/update`)
+taksRouter.get("/", getAllTaks)
+taksRouter.post("/create", createTaks)
+taksRouter.put(`/update/:id`, updateTaks)
+taksRouter.delete(`/delete`, deleteTaks)
 
 
 module.exports = taksRouter
