@@ -1,0 +1,49 @@
+.main_form {
+    height: 400px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.4);
+    background-color: #ECF0F1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+    padding: 15px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+.Priority_form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+    text-align: center;
+    padding: 5px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+.btn_add {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.btn_add button {
+    width: 100%;
+    height: 100%;
+    background-color: #52be81bc ;
+    border-radius: 10px;
+    border: none;
+}
+.main_form input {
+    border-radius: 3px;
+    border: none;
+}
+.limited-textarea {
+    max-width: 200px; /* Ancho máximo del textarea */
+    max-height: 120px; /* Altura máxima del textarea */
+    border: none;
+    border-radius: 5px;
+}
+

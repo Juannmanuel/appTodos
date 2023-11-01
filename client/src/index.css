@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Oswald:wght@200;400;500&family=Poppins:wght@500;600;800&family=Prompt:wght@200&family=Raleway:wght@100&family=Source+Code+Pro:ital,wght@1,300&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #0E6655;
+}

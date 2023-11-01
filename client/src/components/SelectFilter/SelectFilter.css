@@ -1,0 +1,61 @@
+.checkbox_container {
+    background-color: #ECF0F1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 150px;
+    width: 150px;
+    height: 400px;
+    padding: 15px;
+    font-weight: 400;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
+    
+}
+.custom_checkbox_urgent{
+    
+    border-bottom: 2px solid #BA4A00;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 80%;
+    font-size: 25px;
+    padding: 5px;
+}
+.custom_checkbox_medium{
+    border-bottom: 2px solid #F1C40F;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 80%;
+    font-size: 25px;
+    padding: 5px;
+}
+.custom_checkbox_ligth {
+    border-bottom: 2px solid #52BE80;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 80%;
+    font-size: 25px;
+    padding: 5px;
+}
+.custom_checkbox_urgent:hover{
+    background-color: #ba4a0025;
+    border-radius: 10px;
+    border: 1px solid #ba4a0025;
+}
+.custom_checkbox_medium:hover{
+    background-color: #f1c40f29;
+    border-radius: 10px;
+    border: 1px solid #f1c40f29;
+}
+.custom_checkbox_ligth:hover{
+    background-color: #52be8126;
+    border-radius: 10px;
+    border: 1px solid #52be8127;
+}
+
