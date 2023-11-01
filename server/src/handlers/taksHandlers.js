@@ -1,55 +1,25 @@
 
 const { createTaksDB } = require("../controllers/taksControllers");
-const taks = require(`../data/taks`)
-function generateID() {
-    return String(Math.random()).replace('.', '').slice(0, 10);
-}
+const { Taks, Users } = require(`../db`)
 
-const allTaks = (req, res) => {
-    res.status(200).send(taks)
-}
+
+
 const createTaks = async (req, res) => {
-    const { title, description, priority } = req.body
+    const { title, description, priority, UserId } = req.body
     if (!title || !description || !priority) throw Error(`Faltan datos`)
     try {
-        const response = await createTaksDB(title, description, priority)
+        const response = await createTaksDB(title, description, priority, UserId)
+
         res.status(200).send({ "Tarea creada correctamente": response })
     } catch (error) {
         console.error({ "message error": error.message })
     }
 }
-const updateTaks = (req, res) => {
-    const { title, description, priority, id } = req.body;
 
-    if (!id || !title || !description || !priority) {
-        return res.status(400).send('Faltan datos');
-    }
-
-    const existingTaskIndex = taks.findIndex(item => item.id === id);
-
-    if (existingTaskIndex === -1) {
-        return res.status(404).send('Tarea no encontrada');
-    }
-
-    try {
-        taks[existingTaskIndex] = {
-            id,
-            title,
-            description,
-            priority
-        };
-
-        res.status(200).send('Tarea actualizada correctamente');
-    } catch (error) {
-        console.error({ "message": error.message });
-        res.status(500).send('Error al actualizar la tarea');
-    }
-};
 
 
 
 module.exports = {
-    allTaks,
     createTaks,
-    updateTaks
+
 }

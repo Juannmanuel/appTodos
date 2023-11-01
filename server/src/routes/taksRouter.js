@@ -3,9 +3,9 @@ const { allTaks, createTaks, updateTaks } = require("../handlers/taksHandlers")
 
 const taksRouter = Router()
 
-taksRouter.get("/", allTaks)
+taksRouter.get("/")
 taksRouter.post("/post", createTaks)
-taksRouter.put(`/update`, updateTaks )
+taksRouter.put(`/update`)
 
 
 module.exports = taksRouter

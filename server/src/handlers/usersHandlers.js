@@ -6,10 +6,9 @@ const getUser = async (req, res) => {
     if (!email || !password) throw Error(`Faltan datos`)
     try {
         const user = await findOneUser(email)
-        console.log(user);
         if (!user) throw Error(`Usuario no encontrado`)
         if (user.password !== password) throw Error(`Los datos no coinciden`)
-        res.status(200).send(`Loguado con exito`)
+        res.status(200).json(user)
     } catch (error) {
         res.status(400).json({"error": error.message})
 
