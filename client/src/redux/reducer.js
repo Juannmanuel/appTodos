@@ -3,6 +3,7 @@ import { LOGIN, DELETETAKS, UPDATETAKS, GETALLTAKS, CREATETAKS   } from "./actio
 const globalState = {
     IdUser: null,
     taks: [],
+    backupTaks: [],
     access: false,
     messageError: ""
   };
@@ -17,15 +18,41 @@ const globalState = {
             access: action.payload.access,
             IdUser: action.payload.IdUser,
             taks: action.payload.Taks,
+            backupTaks: action.payload.Taks,
             messageError: error
         }
         case GETALLTAKS: 
-        console.log("entre al case",action.payload)
         return {
             ...state,
             taks: action.payload
         }
+        case "FILTRO_COMPLETO":
+            return {
+                ...state,
+                taks: state.taks.filter((item) => item.completed == true)
+            }
+        case "FILTRO_PENDIENTE": 
+        console.log("entré");
+            return {
+                ...state,
+                taks: state.taks.filter((item) => item.completed === false)
+            }
+        case  "FILTRO_URGENCIA": 
+        return {
+            ...state,
+            taks: state.taks.filter((item) => item.priority == "Urgent")
+        }
+        case "FILTRO_MEDIA": 
+        return {
+            ...state,
+            taks: state.taks.filter((item) => item.priority == "Important")
 
+        }
+        case  "FILTRO_REGULAR": 
+        return {
+            ...state,
+            taks: state.taks.filter((item) => item.priority == "Regular")
+        } 
         default:
         return {
             ...state

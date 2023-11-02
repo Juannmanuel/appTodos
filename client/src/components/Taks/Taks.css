@@ -46,15 +46,25 @@
     border-radius: 5px;
     box-shadow: 2px 2px 1px #52BE80;
 }
-.icon_check:hover{
+.icon_check,
+.icon_edit,
+.icon_delete {
+    font-size: 30px;
+    transition: all 0.4s ease; 
+}
+
+.icon_check:hover {
     color: #52BE80;
     font-size: 35px;
 }
-.icon_edit:hover{
+
+.icon_edit:hover {
     color: #F1C40F;
-    font-size: 35px;
+    font-size: 35px; 
 }
-.icon_delete:hover{
+
+.icon_delete:hover {
     color: #BA4A00;
-    font-size: 35px;
+    font-size: 35px; 
 }
+

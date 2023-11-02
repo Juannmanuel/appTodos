@@ -39,9 +39,9 @@ const deleteTaks = async (req, res) => {
 }
 const updateTaks = async (req, res) => {
     const { id } = req.params
-    const { title, description, priority} = req.body
+    const { title, description, priority, completed} = req.body
     try {
-        const response = await Taks.update( { title, description, priority }, { where: {id: id} })
+        const response = await Taks.update( { title, description, priority, completed }, { where: {id: id} })
         if(!response) throw Error(`No se encontró la actividad`)
         return res.status(200).send("Actividad actualizada con exito")
     } catch (error) {

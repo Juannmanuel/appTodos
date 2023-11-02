@@ -8,7 +8,7 @@ export const CREATETAKS = "CREATETAKS"
 
 
 //actions login register
-export const login = (body) => {
+export const loginUser = (body) => {
     return async (dispatch) => {
         try {
             const response = await axios.post(`/user/login`, body)
@@ -33,6 +33,7 @@ export const newUser = (body) => {
     }
 }
 
+// actions Taks
 export const getAllTaks = (UserId) => {
     return async (dispatch) => {
         try {
@@ -54,6 +55,55 @@ export const createTaks = (body) => {
         }
     }
 }
+export const deleteTaks = (id) => {
+    return async () => {
+        try {
+            await axios.delete(`/taks/delete/${id}`)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+}
+export const updateTaks = (id, body) => {
+    return async () => {
+        try {
+            await axios.put(`/taks/update/${id}`, body)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+}
+export const filtroPorEstadoCompleto = () => {
+    return (dispatch) => {
+     dispatch({ type: 'FILTRO_COMPLETO'})
+    };
+  };
+  
+  export const filtroPorEstadoPendiente = () => {
+    return (dispatch) => {
+      dispatch({type: 'FILTRO_PENDIENTE'})
+    };
+  };
+  
+  export const filtroPorUrgencia = () => {
+    return (dispatch) => {
+      dispatch({type: 'FILTRO_URGENCIA'})
+    };
+  };
+  
+  export const filtroPorMedia = () => {
+    return (dispatch) => {
+        dispatch({type: `FILTRO_MEDIA`})
+
+    }
+  }
+export const filtroPorRegular = () => {
+    return (dispatch) => {
+       dispatch({ type: "FILTRO_REGULAR"})
+    }
+}
+  // Otras acciones para otros filtros...
+  
 
 
 

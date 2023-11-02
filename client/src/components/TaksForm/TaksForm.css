@@ -42,8 +42,8 @@
     height: 30px;
 }
 .limited-textarea {
-    max-width: 200px; /* Ancho máximo del textarea */
-    max-height: 120px; /* Altura máxima del textarea */
+    max-width: 250px; 
+    max-height: 120px; 
     border: none;
     border-radius: 5px;
 }
