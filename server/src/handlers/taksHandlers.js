@@ -19,8 +19,9 @@ const createTaks = async (req, res) => {
 }
 
 const getAllTaks = async (req, res) => {
+    const { UserId } = req.params
     try {
-        const taks = await Taks.findAll()
+        const taks = await Taks.findAll({where: { UserId: UserId }})
         return res.status(200).json(taks)
     } catch (error) {
         return res.status(400).json({ "error": error.message })

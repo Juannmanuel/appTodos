@@ -28,21 +28,33 @@
     padding-right: 3px;
     align-items: center;
 }
-.info {
-    width: 90%;
+.info_urgent {
+    width: 87%;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 2px 2px 1px rgba(251, 0, 0, 0.75);
+    box-shadow: 2px 2px 1px #BA4A00;
 }
 .info_medium {
-    width: 90%;
+    width: 87%;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 2px 2px 1px #F1C40F;
 }
 .info_regular {
-    width: 90%;
+    width: 87%;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 2px 2px 1px #52BE80;
+}
+.icon_check:hover{
+    color: #52BE80;
+    font-size: 35px;
+}
+.icon_edit:hover{
+    color: #F1C40F;
+    font-size: 35px;
+}
+.icon_delete:hover{
+    color: #BA4A00;
+    font-size: 35px;
 }

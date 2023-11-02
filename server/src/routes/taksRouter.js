@@ -3,7 +3,7 @@ const { getAllTaks, createTaks, deleteTaks, updateTaks } = require("../handlers/
 
 const taksRouter = Router()
 
-taksRouter.get("/", getAllTaks)
+taksRouter.get("/:UserId", getAllTaks)
 taksRouter.post("/create", createTaks)
 taksRouter.put(`/update/:id`, updateTaks)
 taksRouter.delete(`/delete/:id`, deleteTaks)

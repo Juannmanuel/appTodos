@@ -17,6 +17,12 @@ module.exports = (sequelize) => {
         },
         priority: {
             type: DataTypes.ENUM("Urgent", "Important", "Regular")
+        },
+        completed: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: false
+
         }
     },  { timestamps: false })
 }
