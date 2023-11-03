@@ -1,5 +1,10 @@
 const { DataTypes } = require("sequelize")
+// Defining the Task model schema using Sequelize
+// Definiendo el esquema del modelo de Tarea utilizando Sequelize
 
+
+// Setting up the structure and data types for the Task model
+// Estableciendo la estructura y los tipos de datos para el modelo de Tarea
 module.exports = (sequelize) => {
     sequelize.define(`Taks`, {
         id: {

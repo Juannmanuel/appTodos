@@ -2,7 +2,8 @@
 const { Taks, User } = require(`../db`)
 
 
-
+// Function to create a task
+// Función para crear una tarea
 const createTaks = async (req, res) => {
     const { title, description, priority, UserId } = req.body
     if (!title || !description || !priority) throw Error(`Faltan datos`)
@@ -17,7 +18,8 @@ const createTaks = async (req, res) => {
         console.error({ "message error": error.message })
     }
 }
-
+// Function to get all tasks by User ID
+// Función para obtener todas las tareas por ID de usuario
 const getAllTaks = async (req, res) => {
     const { UserId } = req.params
     try {
@@ -27,6 +29,8 @@ const getAllTaks = async (req, res) => {
         return res.status(400).json({ "error": error.message })
     }
 }
+// Function to delete a task by its ID
+// Función para eliminar una tarea por su ID
 const deleteTaks = async (req, res) => {
     const { id } = req.params
     if (!id) throw Error(`Faltan datos obligatorios`)
@@ -37,6 +41,8 @@ const deleteTaks = async (req, res) => {
         return res.status(400).json({ "error": error.message })
     }
 }
+// Function to update a task by its ID
+// Función para actualizar una tarea por su ID
 const updateTaks = async (req, res) => {
     const { id } = req.params
     const { title, description, priority, completed} = req.body

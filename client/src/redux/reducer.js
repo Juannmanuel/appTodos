@@ -1,4 +1,4 @@
-import { LOGIN, DELETETAKS, UPDATETAKS, GETALLTAKS, CREATETAKS   } from "./actions";
+import { LOGIN, GETALLTAKS, FILTERTAKS   } from "./actions";
 
 const globalState = {
     IdUser: null,
@@ -12,6 +12,8 @@ const globalState = {
   function rootReducer(state = globalState, action) {
     switch (action.type) {
         case LOGIN: 
+        // Updating state based on the LOGIN action
+        // Actualizando el estado basado en la acción LOGIN
         const error = action.payload.access === false && action.payload.error
          return {
             ...state,
@@ -24,35 +26,14 @@ const globalState = {
         case GETALLTAKS: 
         return {
             ...state,
+            taks: action.payload,
+            backupTaks: action.payload
+        }
+        case FILTERTAKS: 
+        return {
+            ...state,
             taks: action.payload
         }
-        case "FILTRO_COMPLETO":
-            return {
-                ...state,
-                taks: state.taks.filter((item) => item.completed == true)
-            }
-        case "FILTRO_PENDIENTE": 
-        console.log("entré");
-            return {
-                ...state,
-                taks: state.taks.filter((item) => item.completed === false)
-            }
-        case  "FILTRO_URGENCIA": 
-        return {
-            ...state,
-            taks: state.taks.filter((item) => item.priority == "Urgent")
-        }
-        case "FILTRO_MEDIA": 
-        return {
-            ...state,
-            taks: state.taks.filter((item) => item.priority == "Important")
-
-        }
-        case  "FILTRO_REGULAR": 
-        return {
-            ...state,
-            taks: state.taks.filter((item) => item.priority == "Regular")
-        } 
         default:
         return {
             ...state

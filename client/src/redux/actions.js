@@ -4,6 +4,7 @@ export const DELETETAKS = "DELETETAKS"
 export const UPDATETAKS = "UPDATETAKS"
 export const GETALLTAKS = "GETALLTAKS"
 export const CREATETAKS = "CREATETAKS"
+export const FILTERTAKS = "FILTERTAKS"
 
 
 
@@ -12,7 +13,6 @@ export const loginUser = (body) => {
     return async (dispatch) => {
         try {
             const response = await axios.post(`/user/login`, body)
-            console.log(response.data);
             dispatch({ type: LOGIN, payload: response.data })
         } catch (error) {
             console.log(error.message)
@@ -20,12 +20,10 @@ export const loginUser = (body) => {
     }
 }
 export const newUser = (body) => {
-    console.log(body, "body");
+
     return async (dispatch) => {
         try {
-            console.log("arriba de data");
-            const { data } = await axios.post(`/user/create`, body)
-            console.log(data);
+            const { data } = await axios.post(`/user/signin`, body)
             dispatch({ type: LOGIN, payload: data })
         } catch (error) {
             console.log(error.message)
@@ -34,11 +32,11 @@ export const newUser = (body) => {
 }
 
 // actions Taks
+
 export const getAllTaks = (UserId) => {
     return async (dispatch) => {
         try {
             const { data } = await axios(`/taks/${UserId}`)
-            console.log("entre al all taks", data);
             dispatch({ type: GETALLTAKS, payload: data })
         } catch (error) {
             console.log(error.message);
@@ -49,7 +47,6 @@ export const createTaks = (body) => {
     return async () => {
         try {
             await axios.post(`/taks/create`, body)
-            console.log("entre al create", body);
         } catch (error) {
             console.log(error.message);
         }
@@ -73,36 +70,17 @@ export const updateTaks = (id, body) => {
         }
     }
 }
-export const filtroPorEstadoCompleto = () => {
-    return (dispatch) => {
-     dispatch({ type: 'FILTRO_COMPLETO'})
-    };
-  };
-  
-  export const filtroPorEstadoPendiente = () => {
-    return (dispatch) => {
-      dispatch({type: 'FILTRO_PENDIENTE'})
-    };
-  };
-  
-  export const filtroPorUrgencia = () => {
-    return (dispatch) => {
-      dispatch({type: 'FILTRO_URGENCIA'})
-    };
-  };
-  
-  export const filtroPorMedia = () => {
-    return (dispatch) => {
-        dispatch({type: `FILTRO_MEDIA`})
-
-    }
-  }
-export const filtroPorRegular = () => {
-    return (dispatch) => {
-       dispatch({ type: "FILTRO_REGULAR"})
+export const filterTaks = (category, UserId) => {
+    return async (dispatch) => {
+        try {
+            const { data } = await axios(`/taks/${UserId}`)
+            dispatch({ type: FILTERTAKS, payload: category == "all" ? data :  data.filter((item) => item.priority === category) })
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 }
-  // Otras acciones para otros filtros...
+
   
 
 

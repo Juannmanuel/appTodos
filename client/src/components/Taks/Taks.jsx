@@ -9,14 +9,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteTaks, getAllTaks, updateTaks } from "../../redux/actions";
 import { useState } from "react";
 
-export default function Taks() {
-  const [showInputs, setShowInputs] = useState(false)
-  const taks = useSelector((state) =>
-    state.taks.filter((item) => item.completed === false)
-  );
-  const completedTaks = useSelector((state) =>
-    state.taks.filter((item) => item.completed === true)
-  );
+export default function Taks({taks}) {
+
+  // const taks = useSelector((state) =>
+  //   state.taks.filter((item) => item.completed === false)
+  // );
+
   
 
   const IdUser = useSelector((state) => state.IdUser);
@@ -30,6 +28,7 @@ export default function Taks() {
       return "info_regular";
     }
   };
+  //Esta funcion cambia el color de la linea en la tarjeta para determinar que prioridad tiene y mostrar el color de las lineas de forma dinamica
   const handleCompletTodo = (id) => {
     const body = taks.find((item) => item.id == id);
     body.completed = true;
@@ -37,11 +36,13 @@ export default function Taks() {
     dispatch(updateTaks(id, body));
     setTimeout(() => {
       dispatch(getAllTaks(IdUser));
-    }, 500);
+    }, 250);
   };
   const handleUpdateTodo = (index) => {
 
   };
+
+  
   const handleDeleteTodo = (id) => {
     dispatch(deleteTaks(id))
     setTimeout(()=> {
@@ -62,6 +63,7 @@ export default function Taks() {
                 <p style={{ margin: "1px", padding: "0px" }}>
                   {item.description}
                 </p>
+                {item.completed === true && <h4>Completed <AiFillCheckCircle/></h4>}
               </div>
               <div className="acciones">
                 <AiFillDelete
