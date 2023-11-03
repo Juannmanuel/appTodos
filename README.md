@@ -1,7 +1,67 @@
-Proyecto Final - Desarrollo de la Aplicación de Tareas Pendientes (To-Do App)
 
-¡Buenas noches! Para mí, es tarde, ya que estoy redactando este readme a las 00:11 (cara sonriente).
-Soy un desarrollador full-stack junior y sinceramente, esta es mi primera prueba técnica. Ha sido una experiencia encantadora pero estresante. El lunes a las 10 am, recibí el correo electrónico y ese mismo día comencé. Quería innovar usando Next.js, pero resultó ser un día perdido. Progresé significativamente con el front-end, pero me quedé a medio camino debido a las dificultades para implementar una tecnología con la que aún no estoy familiarizado. Entonces, se perdió el primer día, aunque esa noche diseñé el diseño CSS de la aplicación.
-Al día siguiente, decidí desarrollarla utilizando las tecnologías que conozco. Creé una base de datos, modelé mis tablas con Sequelize, establecí la relación entre las tablas de usuarios y tareas, y configuré mi servidor con Express. Una vez hecho eso, comencé a construir las rutas. Terminé el CRUD unas 6 horas después. He estado trabajando extensamente en el front-end y cuando llegué a los controladores, me tomó un poco más de tiempo porque tuve que buscar información sobre cómo manejar las consultas a la base de datos. Después de las rutas, finalicé el diseño de todo el front-end. Y esta mañana, comencé con toda la lógica del front-end. Creé un inicio de sesión y un registro, pero no están autenticados. Una vez registrado, puedes comenzar a crear tus tareas pendientes. También puedes eliminarlas y marcarlas como completadas. Todas estas modificaciones se realizan en la base de datos, por lo que implementé un reductor y un estado global.
+¡Por supuesto! Aquí te dejo un ejemplo de un README para tu proyecto, desde el archivo index.js en adelante:
 
-No completé el desafío; los filtros no funcionaron. Pero para ser 100% honesto, es porque estoy muy cansado y ya no quiero continuar. Además, tengo la sensación de que estos podrían haber sido bots y no estoy seguro de si verán mi trabajo, ¡espero que sí! Los filtros no funcionan, no hay autenticación y no está desplegado. Iba a desplegarlo con Versel ahora, pero como no funcionaba, preferí no hacerlo. Seguramente me llevará unas 3 horas más completar esa tarea. "No debes darte por vencido incluso cuando estés derrotado", dice el poeta argentino Pedro Palacios. Pero hoy, me doy por vencido. Estoy muy agotado. Voy a enviar el enlace al repositorio donde he estado trabajando. La cantidad de horas que he invertido ha sido bastante sustancial para mi ritmo. Recuerda, soy un junior, y también es importante considerar que hace unos seis meses ni siquiera sabía lo que era una variable. Aprendo rápido y doy todo; eso es muy importante. Busco una oportunidad; eso es todo lo que pido. Si son lo suficientemente amables, también tiempo. Creo que si hubiera tenido tres o cinco días más, podría haber completado el desafío. Soy alguien que aprende rápido, trabaja duro y si se me da la oportunidad de conocerme, verán que soy una buena persona. Soy argentino, las cosas no están yendo muy bien aquí, y no quiero victimizarme. Es solo para que consideren que soy persistente. Estamos viviendo con una tasa de inflación anual del 46%. Así es aquí. (risas) Bueno, dejaré este readme aquí. Las tecnologías que apliqué fueron Express, Sequelize, PostgresSQL, React, Redux y JavaScript. ¡Juro que escribí todo lo que está en mi código! Puedo explicarlo de arriba abajo. Y si no me creen, ¡les invito a ponerme a prueba! (risas) Muchas gracias por esta experiencia; fue hermosa, agotadora pero hermosa. Gracias.
+To-Do App
+¡Bienvenido a la aplicación To-Do! Este proyecto está diseñado para crear y administrar listas de tareas.
+
+Índice
+Instalación
+Uso
+Estructura de Archivos
+Contribución
+Instalación
+Para utilizar esta aplicación, sigue estos pasos:
+
+Clona el repositorio desde GitHub.
+bash
+Copy code
+git clone https://github.com/tu-usuario/todo-app.git
+Entra al directorio del proyecto.
+bash
+Copy code
+cd todo-app
+Instala las dependencias.
+bash
+Copy code
+npm install
+Uso
+Esta aplicación te permite:
+
+Crear nuevas tareas con título, descripción y prioridad.
+Marcar tareas como completadas.
+Filtrar tareas por su estado (completadas, pendientes) y por prioridad.
+Para ejecutar la aplicación, inicia el servidor. Asegúrate de tener una conexión a la base de datos configurada correctamente.
+
+bash
+Copy code
+node index.js
+Estructura de Archivos
+El proyecto sigue la siguiente estructura de archivos:
+
+java
+Copy code
+todo-app/
+│
+├── src/
+│   ├── db/
+│   ├── handlers/
+│   ├── models/
+│   ├── routes/
+│   └── ...
+│
+├── public/
+│   └── ...
+│
+├── index.js
+├── package.json
+└── ...
+Contribución
+¡Estamos abiertos a contribuciones! Si quieres contribuir a este proyecto, sigue estos pasos:
+
+Haz un fork del repositorio.
+Crea una rama para tu nueva funcionalidad (git checkout -b feature/nueva-funcionalidad).
+Haz tus cambios y haz commit de ellos (git commit -am 'Agrega nueva funcionalidad').
+Haz push a la rama (git push origin feature/nueva-funcionalidad).
+Crea un pull request en GitHub.
+Por favor, sigue los estándares de código y buenas prácticas.
+
